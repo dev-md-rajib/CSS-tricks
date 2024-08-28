@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resize height</title>
+
+    <style>
+      /* resize can be used where  */
+      .d {
+        background-color: blue;
+        /* for both axis -both */
+        resize: both;
+        height: 300px;
+        width: 300px;
+        /* overflow can't be visible */
+        overflow: hidden;
+
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: stretch;
+      }
+
+      p {
+        font-weight: bold;
+        font-size: 30px;
+      }
+
+      .d2 {
+        height: 600px;
+        width: 600px;
+      }
+
+      /* Creating own diff */
+
+      .container2 {
+        display: flex;
+        width: 600px;
+      }
+
+      .img1,
+      .img2 {
+        object-fit: cover;
+        object-position: left;
+      }
+
+      .resized {
+        z-index: -1;
+      }
+      .d2-resizable {
+        resize: horizontal;
+        overflow: hidden;
+        position: absolute;
+        max-width: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="d">this is resizable.</div>
+      <div class="d">this is resizable.</div>
+      <div class="d">this is resizable.</div>
+      <div class="d">this is resizable.</div>
+    </div>
+
+    <p>Creating own diff: <br /></p>
+
+    <section class="test-2">
+      <div class="container2">
+        <div class="d2 d2-resizable">
+          <img
+            class="img1"
+            style="width: 100%; height: 100%"
+            src="images/b1.jpg"
+            alt="" />
+        </div>
+
+        <div class="d2 resized">
+          <img
+            class="img2"
+            style="width: 100%; height: 100%"
+            src="images/aa1.png"
+            alt="" />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
