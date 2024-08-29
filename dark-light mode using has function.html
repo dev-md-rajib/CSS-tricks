@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark-Light</title>
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* has function used to check is there is certain element.  */
+      /* Here "option[value="dark"]:checked" returns/selects a element with those customized value */
+      /* has function checks if the body has that kind of element */
+      /* has() still not supported by all the browsers. */
+      /* There is a function called not() also. */
+      /* which is used to exclude certain element while selecting all lot of  */
+      /* elements based on contion inside not() */
+      body:has(option[value="dark"]:checked) {
+        --background: black;
+        --text-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <select>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  </body>
+</html>
