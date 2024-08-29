@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glass Morphism</title>
+
+    <style>
+      /* We need a container that has background. */
+      /* Inside it child element with transparent background */
+      /* And have to use backdrop-filter property on the child */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        height: 800px;
+        background-image: url("images/glassmorphism\ bg.png");
+      }
+
+      .child {
+        width: 400px;
+        height: 600px;
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .grandchild {
+        width: 300px;
+        height: 450px;
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 255, 255, 0.055);
+      }
+
+      p {
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="child">
+        <p>Contents</p>
+        <div class="grandchild"></div>
+      </div>
+    </div>
+  </body>
+</html>
