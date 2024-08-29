@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url("images/glassmorphism\ bg.png");
+      }
+
+      .container {
+        display: flex;
+        gap: 20px;
+        /* same width with elements */
+        width: 300px;
+        /* overflow in horizontal direction */
+        overflow-x: scroll;
+        /* It defines what will happen if scroll is stopped.
+        proximity means it decide based on how much scrolled.
+        mandatory means it will be scrolled to the next card.
+        x, y, both can be used to control scroll direction  */
+        scroll-snap-type: x proximity;
+        border: 2px solid rgba(255, 255, 255, 0.242);
+        border-radius: 12px;
+        backdrop-filter: blur(15px);
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .card {
+        /* used to set where will be focused after scrolling. */
+        scroll-snap-align: center;
+        flex: 0 0 300px;
+        padding: 80px;
+        box-sizing: border-box;
+        text-align: center;
+        background-color: rgba(127, 255, 212, 0.215);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1>Card Heading</h1>
+        <p>These are the details of the card.</p>
+      </div>
+      <div class="card">
+        <h1>Card Heading</h1>
+        <p>These are the details of the card.</p>
+      </div>
+      <div class="card">
+        <h1>Card Heading</h1>
+        <p>These are the details of the card.</p>
+      </div>
+      <div class="card">
+        <h1>Card Heading</h1>
+        <p>These are the details of the card.</p>
+      </div>
+      <div class="card">
+        <h1>Card Heading</h1>
+        <p>These are the details of the card.</p>
+      </div>
+    </div>
+  </body>
+</html>
